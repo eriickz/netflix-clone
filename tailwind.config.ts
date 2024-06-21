@@ -26,7 +26,10 @@ const config = {
       colors: {
         primary: "#e50914",
         "home-select": "#ffffff66",
-        "home-overlay": "rgba(0, 0, 0, .4)"
+        "home-overlay": "rgba(0, 0, 0, .4)",
+        "home-input-border": "rgba(128, 128, 128, 0.7)",
+        "home-input": "rgba(22, 22, 22, 0.7)",
+        "home-input-label": "rgba(255, 255, 255, 0.7)"
       },
       scale: {
         125: "1.25"
