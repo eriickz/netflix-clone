@@ -50,8 +50,8 @@ export default function Home() {
             </div>
           </header>
         </div>
-        <div className="w-full h-full flex justify-center items-center flex-col text-white">
-          <h1 className="font-NetflixSansBold text-5xl">Unlimited movies, TV shows, and more</h1>
+        <div className="w-full h-full flex justify-center items-center flex-col text-white mt-[-88px]">
+          <h1 className="font-NetflixSansBold text-5xl mt-[114px]">Unlimited movies, TV shows, and more</h1>
           <p className="mt-4 text-2xl">Watch anywhere. Cancel anytime.</p>
           <p className="mt-6 text-xl">Ready to watch? Enter your email to create or restart your membership.</p>
           <form className="flex gap-2 mt-4 w-[580px]">
