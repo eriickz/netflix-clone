@@ -29,10 +29,20 @@ const config = {
         "home-overlay": "rgba(0, 0, 0, .4)",
         "home-input-border": "rgba(128, 128, 128, 0.7)",
         "home-input": "rgba(22, 22, 22, 0.7)",
-        "home-input-label": "rgba(255, 255, 255, 0.7)"
+        "home-input-label": "rgba(255, 255, 255, 0.7)",
+        "home-section-divider": "rgb(35,35,35)"
+      },
+      padding: {
+        18: "4.5rem",
+      },
+      margin: {
+        18: "4.5rem"
       },
       scale: {
         125: "1.25"
+      },
+      zIndex: {
+        "1": "1"
       },
       backgroundImage: {
         "home-promo-pattern": "linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%)"

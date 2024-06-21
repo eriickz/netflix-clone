@@ -7,11 +7,12 @@ import Lang from "@/components/icons/Lang"
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import ChevronRight from "@/components/icons/ChevronRight";
+import tv from "@/assets/images/home/tv.png"
 
 export default function Home() {
   return (
     <main>
-      <div className="relative overflow-hidden h-[700px] bg-home-promo-pattern bg-home-overlay">
+      <section className="relative overflow-hidden h-[700px] bg-home-promo-pattern bg-home-overlay">
         <Image
           alt="Home Promo"
           src={HomePromo}
@@ -65,6 +66,24 @@ export default function Home() {
             </button>
           </form>
         </div>
+      </section>
+      <div className="bg-black">
+        <section className="pb-18">
+          <div className="h-2 bg-home-section-divider mb-18"></div>
+          <div className="flex items-center justify-center h-full">
+            <div className="flex flex-col gap-4 text-white basis-[32%]">
+              <h2 className="font-NetflixSansBold text-5xl">Enjoy on your TV</h2>
+              <p className="font-NetflixSansRegular text-2xl">Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple
+                TV, Blu-ray players, and more.</p>
+            </div>
+            <div>
+              <video autoPlay playsInline muted loop className="absolute mt-[96px] ml-[79px]">
+                <source src="/video/videotv.m4v" type="video/mp4"/>
+              </video>
+              <Image alt="TV" src={tv} className="basis-[31%] relative z-1"/>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
   );
