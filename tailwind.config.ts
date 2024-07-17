@@ -26,11 +26,14 @@ const config = {
       colors: {
         primary: "#e50914",
         "home-select": "#ffffff66",
-        "home-overlay": "rgba(0, 0, 0, .4)",
-        "home-input-border": "rgba(128, 128, 128, 0.7)",
-        "home-input": "rgba(22, 22, 22, 0.7)",
-        "home-input-label": "rgba(255, 255, 255, 0.7)",
-        "home-section-divider": "rgb(35,35,35)"
+        "home-overlay": "#00000066",
+        "home-input-border": "#808080b3",
+        "home-input": "#161616b3",
+        "home-input-label": "#ffffffb3",
+        "home-section-divider": "#232323",
+        "home-download-text": "#0071eb",
+        "home-question-btn": "#2d2d2d",
+        "home-question-btn-hover": "#414141"
       },
       padding: {
         18: "4.5rem",
