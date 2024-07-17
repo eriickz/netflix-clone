@@ -4,15 +4,14 @@ import Logo from "@/components/Logo"
 import Link from "next/link";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import ChevronRight from "@/components/icons/ChevronRight";
+import ChevronRight from "./_components/icons/ChevronRight";
 import tv from "@/assets/images/home/tv.png"
-import mobile from "@/assets/images/home/mobile.jpg"
-import stranger_things_cover from "@/assets/images/home/stranger-things-cover.png"
-import download_icon from "@/assets/images/home/download-icon.gif"
 import device_pile from "@/assets/images/home/device-pile.png"
 import kids from "@/assets/images/home/kids.png"
-import Plus from "@/components/icons/Plus";
-import LangSelector from "@/components/ui/LangSelector";
+import LangSelector from "./_components/LangSelector";
+import HomeSection from "./_components/HomeSection";
+import SectionDivider from "./_components/SectionDivider";
+import FAQ from "./_components/FAQ";
 
 export default function Home() {
   return (
@@ -62,120 +61,40 @@ export default function Home() {
         </div>
       </section>
       <div className="bg-black">
+        <HomeSection
+          direction="left"
+          contentWidth="32%"
+          heading="Enjoy on your TV"
+          subheading="Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more."
+          videoSrc="/video/videotv.m4v"
+          videoClassName="mt-[-16px]"
+          imageSrc={tv}
+          imageAlt="TV"
+        />
+        <HomeSection isStrangerThingsSection />
+        <HomeSection
+          direction="left"
+          contentWidth="30%"
+          heading="Watch everywhere"
+          subheading="Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV."
+          videoSrc="/video/video-devices.m4v"
+          videoClassName="mt-[-154px] w-[400px]"
+          imageSrc={device_pile}
+          imageAlt="Device pile"
+        />
+        <HomeSection
+          direction="right"
+          contentWidth="32%"
+          heading="Create profiles for kids"
+          subheading="Send kids on adventures with their favorite characters in a space made just for them—free with your membership."
+          imageSrc={kids}
+          imageAlt="Kids"
+        />
         <section className="pb-18">
-          <div className="h-2 bg-home-section-divider mb-18"></div>
-          <div className="flex items-center justify-center h-full">
-            <div className="flex flex-col gap-4 text-white basis-[32%]">
-              <h2 className="font-NetflixSansBold text-5xl">Enjoy on your TV</h2>
-              <p className="font-NetflixSansRegular text-2xl">Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple
-                TV, Blu-ray players, and more.</p>
-            </div>
-            <div>
-              <video autoPlay playsInline muted loop className="absolute mt-[96px] ml-[79px]">
-                <source src="/video/videotv.m4v" type="video/mp4"/>
-              </video>
-              <Image alt="TV" src={tv} className="basis-[31%] relative z-1"/>
-            </div>
-          </div>
-        </section>
-        <section className="pb-18">
-          <div className="h-2 bg-home-section-divider mb-18"></div>
-          <div className="flex items-center justify-center h-full">
-            <div className="flex justify-center">
-              <Image alt="mobile" src={mobile} className="basis-[31%]"/>
-              <div
-                className="flex items-center border-2 border-home-input-border absolute z-1 px-3 py-2 rounded-xl bg-black mt-[350px] w-[375px]">
-                <Image alt="Stranger Things Cover" src={stranger_things_cover} className="h-20 w-auto mr-4"/>
-                <div className="flex flex-col justify-center">
-                  <p className="font-NetflixSansSemiBold text-base text-white">Stranger Things</p>
-                  <p
-                    className="font-NetflixSansRegular text-sm text-home-download-text relative top-[-3px]">Downloading...</p>
-                </div>
-                <Image alt="Download animation" src={download_icon} className="w-auto h-[50px] ml-auto"/>
-              </div>
-            </div>
-            <div className="flex flex-col gap-4 text-white basis-[32%]">
-              <h2 className="font-NetflixSansBold text-5xl">Download your shows to watch offline</h2>
-              <p className="font-NetflixSansRegular text-2xl">Save your favorites easily and always have something to
-                watch.</p>
-            </div>
-          </div>
-        </section>
-        <section className="pb-18">
-          <div className="h-2 bg-home-section-divider mb-18"></div>
-          <div className="flex items-center justify-center h-full">
-            <div className="flex flex-col gap-4 text-white basis-[30%]">
-              <h2 className="font-NetflixSansBold text-5xl">Watch everywhere</h2>
-              <p className="font-NetflixSansRegular text-2xl">Stream unlimited movies and TV shows on your phone,
-                tablet, laptop, and TV.</p>
-            </div>
-            <div className="flex justify-center items-center">
-              <video autoPlay playsInline muted loop className="absolute w-[400px] mt-[-154px]">
-                <source src="/video/video-devices.m4v" type="video/mp4"/>
-              </video>
-              <Image alt="Device Pile" src={device_pile} className="relative z-1"/>
-            </div>
-          </div>
-        </section>
-        <section className="pb-18">
-          <div className="h-2 bg-home-section-divider mb-18"></div>
-          <div className="flex items-center justify-center h-full">
-            <Image alt="Kids profile" src={kids}/>
-            <div className="flex flex-col gap-4 text-white basis-[32%]">
-              <h2 className="font-NetflixSansBold text-5xl">Create profiles for kids</h2>
-              <p className="font-NetflixSansRegular text-2xl">Send kids on adventures with their favorite characters in
-                a space made just for them—free with your membership.</p>
-            </div>
-          </div>
-        </section>
-        <section className="pb-18">
-          <div className="h-2 bg-home-section-divider mb-18"></div>
+          <SectionDivider />
           <div className="flex flex-col items-center justify-center h-full text-white">
             <h2 className="font-NetflixSansBold text-5xl">Frequently Asked Questions</h2>
-            <ul className="flex flex-col items-center justify-center w-3/5 mt-6 gap-y-2">
-              <li className="w-full bg-home-question-btn">
-                <button
-                  className="flex justify-between items-center text-2xl font-NetflixSansRegular w-full p-6 hover:bg-home-question-btn-hover">
-                  What is Netflix?
-                  <Plus/>
-                </button>
-              </li>
-              <li className="w-full bg-home-question-btn">
-                <button
-                  className="flex justify-between items-center text-2xl font-NetflixSansRegular w-full p-6 hover:bg-home-question-btn-hover">
-                  How much does Netflix cost?
-                  <Plus/>
-                </button>
-              </li>
-              <li className="w-full bg-home-question-btn">
-                <button
-                  className="flex justify-between items-center text-2xl font-NetflixSansRegular w-full p-6 hover:bg-home-question-btn-hover">
-                  Where I can watch?
-                  <Plus/>
-                </button>
-              </li>
-              <li className="w-full bg-home-question-btn">
-                <button
-                  className="flex justify-between items-center text-2xl font-NetflixSansRegular w-full p-6 hover:bg-home-question-btn-hover">
-                  How do I cancel?
-                  <Plus/>
-                </button>
-              </li>
-              <li className="w-full bg-home-question-btn">
-                <button
-                  className="flex justify-between items-center text-2xl font-NetflixSansRegular w-full p-6 hover:bg-home-question-btn-hover">
-                  What I can watch on Netflix?
-                  <Plus/>
-                </button>
-              </li>
-              <li className="w-full bg-home-question-btn">
-                <button
-                  className="flex justify-between items-center text-2xl font-NetflixSansRegular w-full p-6 hover:bg-home-question-btn-hover">
-                  Is Netflix good for kids?
-                  <Plus/>
-                </button>
-              </li>
-            </ul>
+            <FAQ />
             <p className="mt-11 text-xl">Ready to watch? Enter your email to create or restart your membership.</p>
             <form className="flex gap-2 mt-4 w-[580px]">
               <div className="w-full">
@@ -193,7 +112,7 @@ export default function Home() {
           </div>
         </section>
         <footer className="pb-18">
-          <div className="h-2 bg-home-section-divider mb-18"></div>
+          <SectionDivider />
           <div className="flex items-center justify-center h-full text-home-input-label">
             <div className="w-3/5 font-NetflixSansRegular text-sm">
               <p className="text-base mb-3">
@@ -252,7 +171,9 @@ export default function Home() {
               <div className="w-fit h-8">
                 <LangSelector/>
               </div>
-              <p className="mt-4">Netflix Dominican Republic</p>
+              <p className="mt-4">
+                Created by <a target="_blank" href="https://erickrm.com" className="underline decoration-solid">eriickz</a>
+              </p>
             </div>
           </div>
         </footer>

@@ -1,5 +1,5 @@
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import Lang from "@/components/icons/Lang";
+import Lang from "@/app/_components/icons/Lang";
 
 const LangSelector = () => {
   return (

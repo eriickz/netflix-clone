@@ -1,4 +1,6 @@
-const Plus = () => {
+import { FC } from "react";
+
+const Plus: FC<{ className?: string }> = ({ className }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -7,6 +9,7 @@ const Plus = () => {
       fill="none"
       aria-hidden={true}
       viewBox="0 0 36 36"
+      className={className}
     >
       <path
         fill="currentColor"
