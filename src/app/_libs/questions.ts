@@ -9,7 +9,7 @@ export const QUESTIONS: Question[] = [
     ]
   },
   {
-    question: "How much Netflix cost?",
+    question: "How much does Netflix cost?",
     paragraphs: [
       "Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from USD 4.99 to USD 10.99 a month. No extra costs, no contracts."
     ]

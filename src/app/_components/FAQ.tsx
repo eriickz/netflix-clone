@@ -4,7 +4,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 
 const FAQ = () => {
   return (
-    <Accordion type="single" collapsible orientation="vertical" className="flex flex-col items-center justify-center w-[63%] mt-6 gap-y-2">
+    <Accordion type="single" collapsible orientation="vertical" className="flex flex-col items-center justify-center w-[76%] mt-6 gap-y-2 lg:w-[95%]">
       {QUESTIONS.map(({ question, paragraphs }, index) => (
         <AccordionItem className="w-full bg-home-question-btn border-0" value={`q-${index}`} key={index}>
           <AccordionTrigger

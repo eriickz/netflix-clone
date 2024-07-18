@@ -1,5 +1,5 @@
 import "./globals.css";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 
 const netflixSans400 = localFont({
@@ -28,6 +28,13 @@ export const metadata: Metadata = {
   description: "Watch TV Shows Online, Watch Movies Online",
 };
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -35,7 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${netflixSans400.variable} ${netflixSans500.variable} ${netflixSans900.variable}`}>{children}</body>
+    <body className={`${netflixSans400.variable} ${netflixSans500.variable} ${netflixSans900.variable}`}>{children}</body>
     </html>
   );
 }

@@ -13,11 +13,20 @@ const config = {
     container: {
       center: true,
       padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
     },
     extend: {
+      screens: {
+        "sm": { "max": "600px" },
+        "md": { "max": "960px" },
+        "lg": { "max": "1280px" },
+        "xl": "1920px",
+        "2xl": "1400px",
+      },
+      spacing: {
+        "home-content-lg": "calc(83.333333% - 6rem)",
+        "home-content-xl": "calc(66.66666666666666% - 6rem)",
+        "home-content-md": "calc(100% - 4rem)"
+      },
       fontFamily: {
         NetflixSansRegular: ["var(--netflix-sans_400)"],
         NetflixSansSemiBold: ["var(--netflix-sans_500)"],
@@ -25,6 +34,7 @@ const config = {
       },
       colors: {
         primary: "#e50914",
+        "input-validation": "#eb3942",
         "home-select": "#ffffff66",
         "home-overlay": "#00000066",
         "home-input-border": "#808080b3",
@@ -65,7 +75,11 @@ const config = {
         "accordion-up": "accordion-up 0.25s ease-out",
       },
       transitionProperty: {
-        "rotate": "rotate"
+        "rotate": "rotate",
+        "input": "margin-top, font-size",
+      },
+      data: {
+        "placeholder-position": "placeholder-position~='top'"
       }
     },
   },

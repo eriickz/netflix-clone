@@ -10,7 +10,6 @@ const HomeSection: FC<HomeSectionProps> = ({
   direction,
   heading,
   subheading,
-  contentWidth = "32%",
   videoSrc,
   videoClassName,
   imageSrc,
@@ -19,16 +18,16 @@ const HomeSection: FC<HomeSectionProps> = ({
   isStrangerThingsSection
 }) => {
   return (
-    <section className="pb-18">
+    <section className="pb-18 w-full">
       <SectionDivider />
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center mx-auto xl:w-home-content-xl lg:w-home-content-lg">
         {direction === "left" && (
           <>
-            <div className={`flex flex-col gap-4 text-white basis-[${contentWidth}]`}>
+            <div className="flex flex-col gap-4 text-white basis-1/2">
               <h2 className="font-NetflixSansBold text-5xl">{heading}</h2>
               <p className="font-NetflixSansRegular text-2xl">{subheading}</p>
             </div>
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center basis-1/2">
               <video autoPlay playsInline muted loop className={`absolute ${videoClassName}`}>
                 <source src={videoSrc} type="video/mp4"/>
               </video>
@@ -39,7 +38,7 @@ const HomeSection: FC<HomeSectionProps> = ({
         {direction === "right" && (
           <>
             <Image alt={imageAlt!} src={imageSrc!} className={imageClassName}/>
-            <div className={`flex flex-col gap-4 text-white basis-[${contentWidth}]`}>
+            <div className="flex flex-col gap-4 text-white basis-1/2">
               <h2 className="font-NetflixSansBold text-5xl">{heading}</h2>
               <p className="font-NetflixSansRegular text-2xl">{subheading}</p>
             </div>
@@ -47,10 +46,10 @@ const HomeSection: FC<HomeSectionProps> = ({
         )}
         {isStrangerThingsSection && (
           <>
-            <div className="flex justify-center items-end">
+            <div className="flex justify-center items-end basis-1/2">
               <Image alt="mobile" src={mobile}/>
               <div
-                className="flex items-center border-2 border-home-input-border absolute z-1 px-3 py-2 rounded-xl bg-black mb-[38px] w-[375px]">
+                className="flex items-center border-2 border-home-input-border absolute z-1 px-3 py-2 rounded-xl bg-black mb-[38px] w-[375px] lg:w-[30%] lg:mb-[2%]">
                 <Image alt="Stranger Things Cover" src={stranger_things_cover} className="h-20 w-auto mr-4"/>
                 <div className="flex flex-col justify-center">
                   <p className="font-NetflixSansSemiBold text-base text-white">Stranger Things</p>
@@ -60,7 +59,7 @@ const HomeSection: FC<HomeSectionProps> = ({
                 <Image alt="Download animation" src={download_icon} className="w-auto h-[50px] ml-auto"/>
               </div>
             </div>
-            <div className="flex flex-col gap-4 text-white basis-[32%]">
+            <div className="flex flex-col gap-4 text-white basis-1/2">
               <h2 className="font-NetflixSansBold text-5xl">Download your shows to watch offline</h2>
               <p className="font-NetflixSansRegular text-2xl">Save your favorites easily and always have something to
                 watch.</p>

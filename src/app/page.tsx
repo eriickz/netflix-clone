@@ -2,8 +2,6 @@ import HomePromo from "@/assets/images/home/promo.jpg"
 import Image from "next/image";
 import Logo from "@/components/Logo"
 import Link from "next/link";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
 import ChevronRight from "./_components/icons/ChevronRight";
 import tv from "@/assets/images/home/tv.png"
 import device_pile from "@/assets/images/home/device-pile.png"
@@ -12,6 +10,7 @@ import LangSelector from "./_components/LangSelector";
 import HomeSection from "./_components/HomeSection";
 import SectionDivider from "./_components/SectionDivider";
 import FAQ from "./_components/FAQ";
+import EmailInput from "./_components/EmailInput";
 
 export default function Home() {
   return (
@@ -47,13 +46,8 @@ export default function Home() {
           <p className="mt-4 text-2xl">Watch anywhere. Cancel anytime.</p>
           <p className="mt-6 text-xl">Ready to watch? Enter your email to create or restart your membership.</p>
           <form className="flex gap-2 mt-4 w-[580px]">
-            <div className="w-full">
-              <Label className="font-NetflixSansRegular text-home-input-label text-base absolute mt-4 ml-4">Email
-                address</Label>
-              <Input className="h-full bg-home-input border border-home-input-border rounded px-4 pt-6 pb-2"/>
-            </div>
-            <button
-              className="flex items-center justify-between px-6 py-3 bg-primary rounded text-2xl font-NetflixSansSemiBold text-nowrap gap-3">
+            <EmailInput />
+            <button className="flex items-center justify-between px-6 py-3 bg-primary rounded text-2xl font-NetflixSansSemiBold text-nowrap gap-3">
               Get Started
               <ChevronRight/>
             </button>
@@ -63,28 +57,25 @@ export default function Home() {
       <div className="bg-black">
         <HomeSection
           direction="left"
-          contentWidth="32%"
           heading="Enjoy on your TV"
           subheading="Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more."
           videoSrc="/video/videotv.m4v"
-          videoClassName="mt-[-16px]"
+          videoClassName="mt-[-16px] lg:w-[28%]"
           imageSrc={tv}
           imageAlt="TV"
         />
         <HomeSection isStrangerThingsSection />
         <HomeSection
           direction="left"
-          contentWidth="30%"
           heading="Watch everywhere"
           subheading="Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV."
           videoSrc="/video/video-devices.m4v"
-          videoClassName="mt-[-154px] w-[400px]"
+          videoClassName="w-[400px] mt-[-154px] lg:mt-[-8%] lg:w-[24%]"
           imageSrc={device_pile}
           imageAlt="Device pile"
         />
         <HomeSection
           direction="right"
-          contentWidth="32%"
           heading="Create profiles for kids"
           subheading="Send kids on adventures with their favorite characters in a space made just for them—free with your membership."
           imageSrc={kids}
@@ -97,12 +88,7 @@ export default function Home() {
             <FAQ />
             <p className="mt-11 text-xl">Ready to watch? Enter your email to create or restart your membership.</p>
             <form className="flex gap-2 mt-4 w-[580px]">
-              <div className="w-full">
-                <Label className="font-NetflixSansRegular text-home-input-label text-base absolute mt-4 ml-4">
-                  Email address
-                </Label>
-                <Input className="h-full bg-home-input border border-home-input-border rounded px-4 pt-6 pb-2"/>
-              </div>
+              <EmailInput />
               <button
                 className="flex items-center justify-between px-6 py-3 bg-primary rounded text-2xl font-NetflixSansSemiBold text-nowrap gap-3">
                 Get Started
