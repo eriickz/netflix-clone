@@ -1,6 +1,8 @@
-const SectionDivider = () => {
+import { FC } from "react";
+
+const SectionDivider: FC<{ withMargin?: boolean }> = ({ withMargin = true }) => {
   return (
-    <hr className="h-2 bg-home-section-divider mb-18 border-0" />
+    <hr className={`h-2 bg-home-section-divider border-0 ${withMargin ? "mb-18" : ""}`} />
   )
 }
 

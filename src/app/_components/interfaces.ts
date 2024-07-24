@@ -1,7 +1,11 @@
 import type { StaticImageData } from "next/image";
-import type { Question } from "../_libs/models";
 
-export interface HomeSectionProps {
+export interface ContentHeadingProps {
+  heading?: string,
+  subheading?: string
+}
+
+export interface HomeSectionProps extends ContentHeadingProps {
   direction?: "right" | "left"
   isStrangerThingsSection?: boolean
   imageSrc?: string | StaticImageData
@@ -10,10 +14,5 @@ export interface HomeSectionProps {
   videoClassName?: string
   imageClassName?: string
   contentWidth?: string
-  heading?: string
-  subheading?: string
 }
 
-export interface CollapsibleQuestionProps extends Question {
-  open: boolean
-}

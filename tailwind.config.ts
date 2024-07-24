@@ -16,11 +16,15 @@ const config = {
     },
     extend: {
       screens: {
-        "sm": { "max": "600px" },
-        "md": { "max": "960px" },
-        "lg": { "max": "1280px" },
+        "xs": "294px",
+        "sm": "600px",
+        "md": "960px",
+        "lg": "1280px",
         "xl": "1920px",
         "2xl": "1400px",
+      },
+      fontSize: {
+        "3.5xl": "2rem"
       },
       spacing: {
         "home-content-lg": "calc(83.333333% - 6rem)",

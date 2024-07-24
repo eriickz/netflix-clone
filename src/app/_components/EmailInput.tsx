@@ -24,7 +24,7 @@ const EmailInput = () => {
   }
   
   return (
-    <div className="w-full">
+    <div className="w-full text-start">
       <Label
         className="font-NetflixSansRegular text-home-input-label text-base absolute mt-4 ml-4 data-placeholder-position:mt-[8px] data-placeholder-position:text-xs transition-input duration-200"
         data-placeholder-position={isPlaceholderOnTop ? "top" : "input"}

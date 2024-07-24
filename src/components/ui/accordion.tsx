@@ -34,7 +34,7 @@ const AccordionTrigger = React.forwardRef<
       {...props}
     >
       {children}
-      <Plus />
+      <Plus className="w-6 h-6 md:w-auto md:h-auto" />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ))
