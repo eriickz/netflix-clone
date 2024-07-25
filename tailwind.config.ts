@@ -5,7 +5,6 @@ const config = {
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
   ],
   prefix: "",
@@ -21,9 +20,11 @@ const config = {
         "md": "960px",
         "lg": "1280px",
         "xl": "1920px",
-        "2xl": "1400px",
+        "xxl": "2048px",
+        "xxxl": "2500px",
       },
       fontSize: {
+        "1.5xl": "1.375rem",
         "3.5xl": "2rem"
       },
       spacing: {
@@ -47,7 +48,9 @@ const config = {
         "home-section-divider": "#232323",
         "home-download-text": "#0071eb",
         "home-question-btn": "#2d2d2d",
-        "home-question-btn-hover": "#414141"
+        "home-question-btn-hover": "#414141",
+        "choose-profile-background": "#141414",
+        "choose-profile-default-text-color": "#808080"
       },
       padding: {
         18: "4.5rem",
@@ -62,7 +65,10 @@ const config = {
         "1": "1"
       },
       backgroundImage: {
-        "home-promo-pattern": "linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%)"
+        "home-promo-pattern": "linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%)",
+        "avatar": "url('/images/avatar.png')",
+        "avatar-hero": "url('/images/avatar-hero.png')",
+        "avatar-girl": "url('/images/avatar-girl.png')",
       },
       keyframes: {
         "accordion-down": {

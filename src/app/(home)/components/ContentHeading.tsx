@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { ContentHeadingProps } from "@/app/_components/interfaces";
+import { ContentHeadingProps } from "../libs/interfaces";
 
 const ContentHeading: FC<ContentHeadingProps> = ({ heading, subheading }) => {
   return (

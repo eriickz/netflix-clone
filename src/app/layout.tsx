@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
+import { ReactNode } from "react";
 
 const netflixSans400 = localFont({
   src: "../assets/fonts/NetflixSans_400.woff2",
@@ -35,14 +36,10 @@ export const viewport: Viewport = {
   userScalable: false,
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="en">
-    <body className={`${netflixSans400.variable} ${netflixSans500.variable} ${netflixSans900.variable}`}>{children}</body>
+      <body className={`${netflixSans400.variable} ${netflixSans500.variable} ${netflixSans900.variable}`}>{children}</body>
     </html>
   );
 }

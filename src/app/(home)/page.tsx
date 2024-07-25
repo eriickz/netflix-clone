@@ -2,15 +2,15 @@ import HomePromo from "@/assets/images/home/promo.jpg"
 import Image from "next/image";
 import Logo from "@/components/Logo"
 import Link from "next/link";
-import ChevronRight from "./_components/icons/ChevronRight";
+import ChevronRight from "./components/icons/ChevronRight";
 import tv from "@/assets/images/home/tv.png"
 import device_pile from "@/assets/images/home/device-pile.png"
 import kids from "@/assets/images/home/kids.png"
-import LangSelector from "./_components/LangSelector";
-import HomeContent from "./_components/HomeContent";
-import SectionDivider from "./_components/SectionDivider";
-import FAQ from "./_components/FAQ";
-import EmailInput from "./_components/EmailInput";
+import LangSelector from "./components/LangSelector";
+import HomeContent from "./components/HomeContent";
+import SectionDivider from "./components/SectionDivider";
+import FAQ from "./components/FAQ";
+import EmailInput from "./components/EmailInput";
 
 export default function Home() {
   return (
@@ -33,7 +33,7 @@ export default function Home() {
             <div className="flex gap-2 md:gap-6 items-center h-8">
               <LangSelector />
               <Link
-                href="/"
+                href="/browse"
                 className="flex items-center bg-primary text-white px-4 text-sm font-NetflixSansSemiBold w-full h-full rounded-md text-nowrap sm:text-wrap"
               >
                 Sign In
@@ -47,10 +47,10 @@ export default function Home() {
           <p className="mt-6 text-lg md:text-xl">Ready to watch? Enter your email to create or restart your membership.</p>
           <form className="flex gap-2 mt-4 w-full flex-wrap justify-center sm:w-[90%] sm:flex-nowrap sm:justify-start md:w-[580px]">
             <EmailInput />
-            <button className="flex items-center justify-between px-6 py-3 bg-primary rounded text-2xl font-NetflixSansSemiBold text-nowrap gap-3">
+            <Link href="/browse" className="flex items-center justify-between px-6 py-3 bg-primary rounded text-2xl font-NetflixSansSemiBold text-nowrap gap-3">
               Get Started
               <ChevronRight/>
-            </button>
+            </Link>
           </form>
         </div>
       </section>
@@ -60,7 +60,7 @@ export default function Home() {
           heading="Enjoy on your TV"
           subheading="Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more."
           videoSrc="/video/videotv.m4v"
-          videoClassName="w-[62%] mt-[-10px] sm:mt-[-16px] sm:w-[66%] md:w-[35%] lg:w-[28%] xl:w-[470px]"
+          videoClassName="w-[62%] mt-[-10px] sm:mt-[-16px] sm:w-[66%] md:w-[32%] md:mt-[-15px] lg:w-[28%] xl:w-[470px]"
           imageSrc={tv}
           imageAlt="TV"
         />
@@ -70,7 +70,7 @@ export default function Home() {
           heading="Watch everywhere"
           subheading="Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV."
           videoSrc="/video/video-devices.m4v"
-          videoClassName="w-[400px] mt-[-154px] w-[55%] mt-[-23%] md:w-[29%] md:mt-[-12%] lg:mt-[-8%] lg:w-[24%] xl:mt-[-8%] xl:w-[19%]"
+          videoClassName="w-[400px] mt-[-154px] w-[55%] mt-[-23%] md:w-[27%] md:mt-[-11%] lg:mt-[-8%] lg:w-[24%] xl:mt-[-8%] xl:w-[19%] xxl:w-[15%] xxl:mt-[-6%] xxxl:w-[16%]"
           imageSrc={device_pile}
           imageAlt="Device pile"
         />
@@ -92,11 +92,10 @@ export default function Home() {
                 restart your membership.</p>
               <form className="flex justify-center w-full flex-wrap gap-2 mt-4 sm:w-auto sm:justify-start sm:flex-nowrap">
                 <EmailInput/>
-                <button
-                  className="flex items-center justify-between px-6 py-3 bg-primary rounded text-2xl font-NetflixSansSemiBold text-nowrap gap-3">
+                <Link href="/browse" className="flex items-center justify-between px-6 py-3 bg-primary rounded text-2xl font-NetflixSansSemiBold text-nowrap gap-3">
                   Get Started
                   <ChevronRight/>
-                </button>
+                </Link>
               </form>
             </div>
           </div>

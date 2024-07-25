@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { QUESTIONS } from "../_libs/questions";
+import { QUESTIONS } from "../libs/questions";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const FAQ = () => {

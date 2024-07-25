@@ -17,8 +17,8 @@ export const QUESTIONS: Question[] = [
   {
     question: "Where I can watch?",
     paragraphs: [
-      "Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix app, including smart TVs, smartphones, tablets, streaming media players and game consoles.",
-      "You can also download your favorite shows with the iOS or Android app. Use downloads to watch while you're on the go and without an internet connection. Take Netflix with you anywhere."
+      "Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix browse, including smart TVs, smartphones, tablets, streaming media players and game consoles.",
+      "You can also download your favorite shows with the iOS or Android browse. Use downloads to watch while you're on the go and without an internet connection. Take Netflix with you anywhere."
     ]
   },
   {

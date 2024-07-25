@@ -1,5 +1,5 @@
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import Lang from "@/app/_components/icons/Lang";
+import Lang from "./icons/Lang";
 import { FC } from "react";
 
 const LangSelector: FC<{ hideText?: boolean }> = ({ hideText = true }) => {
