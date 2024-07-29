@@ -50,7 +50,9 @@ const config = {
         "home-question-btn": "#2d2d2d",
         "home-question-btn-hover": "#414141",
         "choose-profile-background": "#141414",
-        "choose-profile-default-text-color": "#808080"
+        "choose-profile-default-text-color": "#808080",
+        "app-header-nav-item-color": "#e5e5e5",
+        "app-header-nav-item-hover-color": "#b3b3b3"
       },
       padding: {
         18: "4.5rem",
@@ -90,6 +92,9 @@ const config = {
       },
       data: {
         "placeholder-position": "placeholder-position~='top'"
+      },
+      borderWidth: {
+        "5": "5px"
       }
     },
   },

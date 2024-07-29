@@ -1,8 +1,21 @@
-import ChooseProfile from "./choose-profile/ChooseProfile";
+"use client"
+
+import ChooseProfile from "./profile/ChooseProfile";
+import { useState } from "react";
+import { Profile } from "./profile/libs/interfaces";
+import App from "./app/App";
 
 const Browse = () => {
+  const [profile, setProfile] = useState<Profile>(undefined)
+  
   return (
-    <ChooseProfile />
+    <>
+      {
+        !profile
+          ? <ChooseProfile setProfileState={setProfile}/>
+          : <App/>
+      }
+    </>
   )
 }
 
