@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss"
+import plugin from "tailwindcss/plugin"
 
 const config = {
   darkMode: ["class"],
@@ -25,7 +26,9 @@ const config = {
       },
       fontSize: {
         "1.5xl": "1.375rem",
-        "3.5xl": "2rem"
+        "2.5xl": "1.75rem",
+        "3.5xl": "2rem",
+        "4.5xl": "2.5rem"
       },
       spacing: {
         "home-content-lg": "calc(83.333333% - 6rem)",
@@ -36,6 +39,9 @@ const config = {
         NetflixSansRegular: ["var(--netflix-sans_400)"],
         NetflixSansSemiBold: ["var(--netflix-sans_500)"],
         NetflixSansBold: ["var(--netflix-sans_900)"],
+      },
+      textShadow: {
+        "app-home-movie": "rgba(0, 0, 0, 0.45) 2px 2px 4px"
       },
       colors: {
         primary: "#e50914",
@@ -52,7 +58,13 @@ const config = {
         "choose-profile-background": "#141414",
         "choose-profile-default-text-color": "#808080",
         "app-header-nav-item-color": "#e5e5e5",
-        "app-header-nav-item-hover-color": "#b3b3b3"
+        "app-header-nav-item-hover-color": "#b3b3b3",
+        "app-home-default-btn-bg-hover": "#ffffffbf",
+        "app-home-secondary-btn-bg": "#6d6d6eb3",
+        "app-home-secondary-btn-bg-hover": "#6d6d6e66",
+        "app-home-refresh-btn-hover": "#ffffff1a",
+        "app-home-maturity-ranking-bg": "#33333399",
+        "app-home-maturity-ranking-border": "#dcdcdc",
       },
       padding: {
         18: "4.5rem",
@@ -64,10 +76,14 @@ const config = {
         125: "1.25"
       },
       zIndex: {
-        "1": "1"
+        "1": "1",
+        "2": "2",
+        "3": "3",
       },
       backgroundImage: {
         "home-promo-pattern": "linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%)",
+        "app-header-gradient": "linear-gradient(180deg,rgba(0,0,0,.7) 10%,transparent)",
+        "app-home-hero-vignette-gradient": "linear-gradient(77deg,rgba(0,0,0,.6),transparent 85%)",
         "avatar": "url('/images/avatar.png')",
         "avatar-hero": "url('/images/avatar-hero.png')",
         "avatar-girl": "url('/images/avatar-girl.png')",
@@ -98,7 +114,19 @@ const config = {
       }
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    plugin(function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          'text-shadow': (value) => ({
+            textShadow: value,
+          }),
+        },
+        { values: theme('textShadow') }
+      )
+    }),
+  ],
 } satisfies Config
 
 export default config

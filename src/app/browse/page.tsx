@@ -6,13 +6,13 @@ import { Profile } from "./profile/libs/interfaces";
 import App from "./app/App";
 
 const Browse = () => {
-  const [profile, setProfile] = useState<Profile>(undefined)
+  const [profile, setProfile] = useState<Profile | undefined>(undefined)
   
   return (
     <>
       {
         !profile
-          ? <ChooseProfile setProfileState={setProfile}/>
+          ? <ChooseProfile setProfileState={setProfile} />
           : <App/>
       }
     </>

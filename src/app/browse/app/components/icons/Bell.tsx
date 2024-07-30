@@ -5,7 +5,7 @@ const Bell = () => {
       width="24"
       height="24"
       fill="none"
-      ariaHidden="true"
+      aria-hidden="true"
       viewBox="0 0 24 24"
     >
       <path

@@ -1,10 +1,10 @@
 import Logo from "@/components/Logo";
-import MagnifyingGlass from "@/app/browse/app/components/icons/MagnifyingGlass";
-import Bell from "@/app/browse/app/components/icons/Bell";
+import MagnifyingGlass from "../icons/MagnifyingGlass";
+import Bell from "../icons/Bell";
 
 const Header = () => {
   return (
-    <header className="w-full relative pt-2 flex justify-between items-center px-[60px] z-1">
+    <header className="w-full relative pt-2 flex justify-between items-center px-[60px] z-3 bg-app-header-gradient">
       <div className="flex items-center">
         <Logo className="w-24 h-14 mr-9"/>
         <ul className="flex items-center gap-x-6 text-app-header-nav-item-color font-NetflixSansRegular text-sm [&>li]:cursor-pointer hover:[&>li:not(:first-child)]:text-app-header-nav-item-hover-color">
