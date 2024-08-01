@@ -84,6 +84,7 @@ const config = {
         "home-promo-pattern": "linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%)",
         "app-header-gradient": "linear-gradient(180deg,rgba(0,0,0,.7) 10%,transparent)",
         "app-home-hero-vignette-gradient": "linear-gradient(77deg,rgba(0,0,0,.6),transparent 85%)",
+        "app-home-ranking-vignette-gradient": "linear-gradient(180deg,hsla(0,0%,8%,0) 0,hsla(0,0%,8%,.15) 15%,hsla(0,0%,8%,.35) 29%,hsla(0,0%,8%,.58) 44%,#141414 68%,#141414)",
         "avatar": "url('/images/avatar.png')",
         "avatar-hero": "url('/images/avatar-hero.png')",
         "avatar-girl": "url('/images/avatar-girl.png')",
@@ -111,6 +112,12 @@ const config = {
       },
       borderWidth: {
         "5": "5px"
+      },
+      minWidth: {
+        "1/2": "50%",
+      },
+      maxWidth: {
+        "1/6": "16.666667%"
       }
     },
   },
