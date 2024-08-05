@@ -41,7 +41,11 @@ const config = {
         NetflixSansBold: ["var(--netflix-sans_900)"],
       },
       textShadow: {
-        "app-home-movie": "rgba(0, 0, 0, 0.45) 2px 2px 4px"
+        "app-home-movie": "rgba(0, 0, 0, 0.45) 2px 2px 4px",
+        "app-home-slide-hover-card-tags": "0 1px 1px rgba(0,0,0,.7)"
+      },
+      boxShadow: {
+        "app-home-slide-hover-card": "rgba(0, 0, 0, 0.75) 0px 3px 10px"
       },
       colors: {
         primary: "#e50914",
@@ -59,12 +63,22 @@ const config = {
         "choose-profile-default-text-color": "#808080",
         "app-header-nav-item-color": "#e5e5e5",
         "app-header-nav-item-hover-color": "#b3b3b3",
+        "app-home-header-scrolled-bg": "#141414",
         "app-home-default-btn-bg-hover": "#ffffffbf",
         "app-home-secondary-btn-bg": "#6d6d6eb3",
         "app-home-secondary-btn-bg-hover": "#6d6d6e66",
         "app-home-refresh-btn-hover": "#ffffff1a",
         "app-home-maturity-ranking-bg": "#33333399",
         "app-home-maturity-ranking-border": "#dcdcdc",
+        "app-home-slide-hover-card-btn-border": "#ffffff80",
+        "app-home-slide-hover-card-btn-bg": "#2a2a2a99",
+        "app-home-slide-hover-card-bg": "#181818",
+        "app-home-slide-hover-card-videometadata-match-score": "#46d369",
+        "app-home-slide-hover-card-videometadata-content": "#bcbcbc",
+        "app-home-slide-hover-card-videometadata-quality-badge": "#ffffffe6",
+        "app-home-slide-hover-card-tags-separator-bg": "#646464",
+        "app-home-slide-handler-bg": "#14141480",
+        "app-home-slide-handler-hover-bg": "#141414b3"
       },
       padding: {
         18: "4.5rem",
@@ -106,6 +120,15 @@ const config = {
       transitionProperty: {
         "rotate": "rotate",
         "input": "margin-top, font-size",
+        "backgroundColor": "background-color",
+        "slider": "transform",
+      },
+      transitionDuration: {
+        "0.4": "0.4s", 
+        "0.54": "0.54s"
+      },
+      transitionTimingFunction: {
+        "slider-ease": "cubic-bezier(.5,0,.1,1)",
       },
       data: {
         "placeholder-position": "placeholder-position~='top'"
