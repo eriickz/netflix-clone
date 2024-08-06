@@ -1,4 +1,3 @@
-import Header from "../header/Header"
 import Top10 from "../icons/Top10";
 import Play from "../icons/Play";
 import Info from "../icons/Info";
@@ -8,9 +7,7 @@ import Image from "next/image";
 const HeroImage = () => {
   return (
     <>
-      <div className="absolute w-[50%] h-full bg-app-home-hero-vignette-gradient z-2"></div>
-      <Header/>
-      <div className="relative z-3 w-2/5 px-[60px] mt-[212px]">
+      <div className="relative z-3 w-2/5 px-14.5 pt-[212px]">
         <Image alt="non negotiable" src="/images/non-negotiable.webp" width={800} height={800} className="relative z-30"/>
         <div className="text-white">
           <div className="flex items-center my-6">

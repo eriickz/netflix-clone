@@ -25,6 +25,7 @@ const config = {
         "xxxl": "2500px",
       },
       fontSize: {
+        "1.5xs": "0.8125rem",
         "1.5xl": "1.375rem",
         "2.5xl": "1.75rem",
         "3.5xl": "2rem",
@@ -78,9 +79,13 @@ const config = {
         "app-home-slide-hover-card-videometadata-quality-badge": "#ffffffe6",
         "app-home-slide-hover-card-tags-separator-bg": "#646464",
         "app-home-slide-handler-bg": "#14141480",
-        "app-home-slide-handler-hover-bg": "#141414b3"
+        "app-home-slide-handler-hover-bg": "#141414b3",
+        "app-home-slide-pagination-item-bg": "#4d4d4d",
+        "app-home-slide-pagination-active-item-bg": "#aaa",
+        "app-footer-text": "#808080"
       },
       padding: {
+        "14.5": "3.75rem",
         18: "4.5rem",
       },
       margin: {
