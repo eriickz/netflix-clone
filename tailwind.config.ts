@@ -34,7 +34,7 @@ const config = {
       spacing: {
         "home-content-lg": "calc(83.333333% - 6rem)",
         "home-content-xl": "calc(66.66666666666666% - 6rem)",
-        "home-content-md": "calc(100% - 4rem)"
+        "home-content-md": "calc(100% - 4rem)",
       },
       fontFamily: {
         NetflixSansRegular: ["var(--netflix-sans_400)"],

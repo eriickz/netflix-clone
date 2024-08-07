@@ -15,7 +15,7 @@ const SliderItemContent: FC<{ position: number }> = ({ position }) => {
     >
       <Image alt="rank-image" src="/images/modal-img.webp" width={0} height={0} sizes="100vh" className="w-full rounded-t-md" />
       <div className="p-4">
-        <div className="flex justify-between items-center mb-4">
+        <div className="flex justify-between items-center mb-5">
           <div className="flex items-center gap-x-2">
             <button className="p-3 rounded-full border-2 bg-white">
               <Play />
@@ -31,17 +31,17 @@ const SliderItemContent: FC<{ position: number }> = ({ position }) => {
             <CaretDownBold />
           </button>
         </div>
-        <div className="flex items-center gap-x-2 text-app-home-slide-hover-card-videometadata-content font-NetflixSansRegular mb-4">
+        <div className="flex items-center gap-x-2 text-app-home-slide-hover-card-videometadata-content font-NetflixSansRegular mb-3 text-base">
           <p className="font-NetflixSansSemiBold text-app-home-slide-hover-card-videometadata-match-score">98% Match</p>
-          <div className="border border-home-select px-[7px]">
+          <div className="border border-home-select px-[7px] leading-[19.2px]">
             <p>16+</p>
           </div>
           <p>1h 38m</p>
-          <div className="text-[11px] border border-home-select px-[6px] rounded-[3px]">
+          <div className="text-[11px] border border-home-select px-[6px] rounded-[3px] leading-[13.44px]">
             <p>HD</p>
           </div>
         </div>
-        <ul className="flex text-white font-NetflixSansRegular mb-2">
+        <ul className="flex text-white font-NetflixSansRegular mb-1 text-base">
           <li className="text-shadow-app-home-slide-hover-card-tags inline-flex items-center flex-wrap">
             Violent 
             <div className="before:content-['\2022'] before:inline-block before:px-3 before:text-3xl before:text-app-home-slide-hover-card-tags-separator-bg before:align-sub"></div>

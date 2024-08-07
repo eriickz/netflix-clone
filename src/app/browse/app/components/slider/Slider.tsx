@@ -18,17 +18,17 @@ const Slider = () => {
   }
 
   return (
-    <div className={`w-full bg-app-home-ranking-vignette-gradient px-14.5 mb-[76px] ${showLeftHandler ? "overflow-x-clip" : "overflow-x-hidden"}`}>
+    <div className={`w-full bg-app-home-ranking-vignette-gradient px-14.5 ${showLeftHandler ? "overflow-x-clip" : "overflow-x-hidden"}`}>
       {showLeftHandler && (
         <button 
-          className="absolute flex justify-center items-center z-1 w-[60px] h-[217px] left-0 bg-app-home-slide-handler-bg text-transparent rounded-t hover:text-white hover:bg-app-home-slide-handler-hover-bg"
+          className="absolute flex justify-center items-center z-1 w-[60px] h-[-webkit-fill-available] h-[-moz-fill-available] left-0 bg-app-home-slide-handler-bg text-transparent rounded-tr hover:text-white hover:bg-app-home-slide-handler-hover-bg"
           onClick={() => onSliderChange(true)}
         >
           <CaretDownBold className="w-[50px] h-[50px] rotate-90 transition-all duration-75 ease-in" />
         </button>
       )}
       <button 
-        className="absolute flex justify-center items-center z-1 w-[60px] h-[217px] right-0 bg-app-home-slide-handler-bg text-transparent rounded-t hover:text-white hover:bg-app-home-slide-handler-hover-bg"
+        className="absolute flex justify-center items-center z-1 w-[60px] h-[-webkit-fill-available] h-[-moz-fill-available] right-0 bg-app-home-slide-handler-bg text-transparent rounded-tl hover:text-white hover:bg-app-home-slide-handler-hover-bg"
         onClick={() => onSliderChange(false)}
       >
         <CaretDownBold className="w-[50px] h-[50px] rotate-[-90deg] transition-all duration-75 ease-in" />
