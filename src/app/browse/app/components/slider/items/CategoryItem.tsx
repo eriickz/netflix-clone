@@ -6,7 +6,7 @@ import SliderItemContent from "./SliderItemContent"
 const CategoryItem: FC<{ position: number }> = ({ position }) => {
   return (
     <HoverCard openDelay={500}>
-      <HoverCardTrigger className="inline-block w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 h-full px-1">
+      <HoverCardTrigger className="inline-block w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 1.5lg:w-1/6 h-full px-1">
         <Image 
           alt="rank-slide-one" 
           src="/images/modal-img-category.jpg" 

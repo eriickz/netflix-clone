@@ -18,7 +18,7 @@ const SliderItemContent: FC<{ position: number }> = ({ position }) => {
         <div className="flex justify-between items-center mb-5">
           <div className="flex items-center gap-x-2">
             <button className="p-3 rounded-full border-2 bg-white">
-              <Play />
+              <Play className="w-6 h-6 " />
             </button>
             <button className="p-3 rounded-full border-2 border-app-home-slide-hover-card-btn-border text-white bg-app-home-slide-hover-card-btn-bg">
               <PlusBold />

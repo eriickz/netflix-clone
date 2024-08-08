@@ -20,6 +20,7 @@ const config = {
         "sm": "600px",
         "md": "960px",
         "lg": "1280px",
+        "1.5lg": "1400px",
         "xl": "1920px",
         "xxl": "2048px",
         "xxxl": "2500px",
@@ -29,7 +30,9 @@ const config = {
         "1.5xl": "1.375rem",
         "2.5xl": "1.75rem",
         "3.5xl": "2rem",
-        "4.5xl": "2.5rem"
+        "4.5xl": "2.5rem",
+        "1.2r": "1.2vw",
+        "1.5r": "1.5vw",
       },
       spacing: {
         "home-content-lg": "calc(83.333333% - 6rem)",
@@ -86,7 +89,9 @@ const config = {
       },
       padding: {
         "14.5": "3.75rem",
+        "16.5": "4.375rem",
         18: "4.5rem",
+        "3.9r": "3.9vw"
       },
       margin: {
         18: "4.5rem"

@@ -1,8 +1,8 @@
 "use client"
 
 import Logo from "@/components/Logo";
-import MagnifyingGlass from "../icons/MagnifyingGlass";
-import Bell from "../icons/Bell";
+import MagnifyingGlass from "./icons/MagnifyingGlass";
+import Bell from "./icons/Bell";
 import { useEffect, useState } from "react";
 
 const Header = () => {
@@ -15,7 +15,7 @@ const Header = () => {
   }, [])
 
   return (
-    <header className={`w-full fixed pt-2 flex justify-between items-center px-[60px] z-[4] transition-backgroundColor duration-0.4 ease-in bg-app-header-gradient ${!isOnPageTop && "bg-app-home-header-scrolled-bg"}`}>
+    <header className={`w-full fixed pt-2 flex justify-between items-center px-3.9r z-[4] transition-backgroundColor duration-0.4 ease-in bg-app-header-gradient ${!isOnPageTop && "bg-app-home-header-scrolled-bg"}`}>
       <div className="flex items-center">
         <Logo className="w-24 h-14 mr-9"/>
         <ul className="flex items-center gap-x-6 text-app-header-nav-item-color font-NetflixSansRegular text-sm [&>li]:cursor-pointer hover:[&>li:not(:first-child)]:text-app-header-nav-item-hover-color">

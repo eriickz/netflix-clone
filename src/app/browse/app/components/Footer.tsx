@@ -1,5 +1,5 @@
-import LinkedIn from "../icons/LinkedIn"
-import WhatsApp from "../icons/WhatsApp"
+import LinkedIn from "./icons/LinkedIn"
+import WhatsApp from "./icons/WhatsApp"
 
 const Footer = () => {
   return (
