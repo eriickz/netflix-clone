@@ -4,7 +4,7 @@ import { ChooseProfileProps } from "./libs/interfaces";
 
 const ChooseProfile: FC<ChooseProfileProps> = ({ setProfileState }) => {
   return (
-    <main className="w-full h-full sm:h-screen py-20 bg-choose-profile-background z-0">
+    <main className="w-full h-full py-20 bg-choose-profile-background z-1 lg:absolute">
       <section className="flex flex-col h-full justify-center items-center text-choose-profile-default-text-color">
         <h1 className="text-white text-6xl mb-11 font-NetflixSansRegular text-center">Who's watching?</h1>
         <div className="flex flex-col justify-center items-center">

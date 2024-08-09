@@ -3,8 +3,8 @@ import WhatsApp from "./icons/WhatsApp"
 
 const Footer = () => {
   return (
-    <footer className="w-full h-full mt-[170px] pb-5">
-      <div className="w-2/5 flex-col mx-auto">
+    <footer className="w-full h-full mt-[70px] pb-5">
+      <div className="md:w-2/5 mx-auto px-[4%] md:px-0">
         <div className="flex h-6 gap-x-4 mb-[14px]">
           <a target="_blank" href="https://linkedin.com/in/eriickz">
             <LinkedIn />
@@ -13,7 +13,7 @@ const Footer = () => {
             <WhatsApp />
           </a>
         </div>
-        <ul className="flex flex-wrap text-1.5xs font-NetflixSansRegular text-app-footer-text [&>li]:basis-[25%] hover:[&>li]:underline hover:[&>li]:cursor-pointer gap-y-3">
+        <ul className="flex flex-wrap text-1.5xs font-NetflixSansRegular text-app-footer-text [&>li]:basis-[50%] md:[&>li]:basis-[25%] hover:[&>li]:underline hover:[&>li]:cursor-pointer gap-y-3">
           <li>
             <a>Audio Description</a>
           </li>

@@ -1,4 +1,4 @@
-import HomePromo from "@/assets/images/home/promo.jpg"
+import HomePromo from "@/assets/images/home/promo.jpeg"
 import Image from "next/image";
 import Logo from "@/components/Logo"
 import Link from "next/link";

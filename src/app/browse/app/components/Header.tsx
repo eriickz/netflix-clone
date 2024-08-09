@@ -15,12 +15,13 @@ const Header = () => {
   }, [])
 
   return (
-    <header className={`w-full fixed pt-2 flex justify-between items-center px-3.9r z-[4] transition-backgroundColor duration-0.4 ease-in bg-app-header-gradient ${!isOnPageTop && "bg-app-home-header-scrolled-bg"}`}>
+    <header className={`w-full fixed flex justify-between items-center px-3.9r z-[4] pt-1 min-h-[41px] md:pt-0 md:min-h-[70px] transition-backgroundColor duration-0.4 ease-in bg-app-header-gradient ${!isOnPageTop && "bg-app-home-header-scrolled-bg"}`}>
       <div className="flex items-center">
-        <Logo className="w-24 h-14 mr-9"/>
-        <ul className="flex items-center gap-x-6 text-app-header-nav-item-color font-NetflixSansRegular text-sm [&>li]:cursor-pointer hover:[&>li:not(:first-child)]:text-app-header-nav-item-hover-color">
+        <Logo className="xs:w-[60px] md:w-[5.34vw] h-full mr-[2.5vw]" />
+        <ul className="flex items-center gap-x-[1.2rem] text-app-header-nav-item-color font-NetflixSansRegular text-xs md:text-sm [&>li:not(:first-child)]:hidden [&>li:not(:first-child)]:md:list-item [&>li]:cursor-pointer hover:[&>li:not(:first-child)]:text-app-header-nav-item-hover-color">
           <li className="text-white font-NetflixSansSemiBold">
             Home
+            <span className="w-0 h-0 border-t-5 border-l-5 border-r-5 border-t-white border-l-transparent border-r-transparent ml-1 inline-block md:hidden"></span>
           </li>
           <li>
             TV Shows
@@ -35,7 +36,7 @@ const Header = () => {
             My List
           </li>
           <li>
-            Browse by languages
+            Browse by Languages
           </li>
         </ul>
       </div>
@@ -47,9 +48,8 @@ const Header = () => {
           <Bell/>
         </button>
         <div className="flex items-center cursor-pointer">
-          <div className="bg-avatar bg-no-repeat bg-cover w-8 h-8"></div>
-          <span
-            className="w-0 h-0 border-t-5 border-l-5 border-r-5 border-t-white border-l-transparent border-r-transparent ml-2.5"></span>
+          <div className="bg-avatar bg-no-repeat bg-cover w-8 h-8 rounded-sm"></div>
+          <span className="w-0 h-0 border-t-5 border-l-5 border-r-5 border-t-white border-l-transparent border-r-transparent ml-2.5 hidden md:block"></span>
         </div>
       </div>
     </header>

@@ -18,7 +18,7 @@ const HeroContent = () => {
         </div>
       </div>
       <div className="z-3 w-full flex justify-between items-center">
-        <div className="flex items-center mt-[2.7vw] gap-x-4">
+        <div className="flex items-center mt-[2.7vw] gap-x-[1vw]">
           <button
             className="flex items-center gap-x-2 bg-white py-[0.7vw] px-[1.6vw] rounded font-NetflixSansSemiBold text-1.2r hover:bg-app-home-default-btn-bg-hover">
             <Play className="w-[1.8vw] h-[1.8vw]"/>
@@ -31,10 +31,10 @@ const HeroContent = () => {
           </button>
         </div>
         <div className="flex items-center text-white">
-          <button className="border rounded-full p-[10px] mr-7 hover:bg-app-home-refresh-btn-hover w-[2.4vw] h-[2.4vw]">
+          <button className="border rounded-full p-[0.5vw] mr-[1.1vw] hover:bg-app-home-refresh-btn-hover w-[2.4vw] h-[2.4vw]">
             <Refresh className="w-full h-full"/>
           </button>
-          <div className="flex items-center bg-app-home-maturity-ranking-bg pl-5 py-2 pr-[3.5vw] border-l-[3px] border-l-app-home-maturity-ranking-border">
+          <div className="flex items-center bg-app-home-maturity-ranking-bg pl-[0.8vw] py-[0.5vw] pr-[3.5vw] border-l-[3px] border-l-app-home-maturity-ranking-border">
             <p className="text-[1.1vw] font-NetflixSansRegular">13+</p>
           </div>
         </div>
