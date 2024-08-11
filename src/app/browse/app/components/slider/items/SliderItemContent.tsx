@@ -13,7 +13,7 @@ const SliderItemContent: FC<{ position: number }> = ({ position }) => {
       avoidCollisions 
       className={`absolute rounded-md border-none w-[580px] mt-[-100px] p-0 shadow-app-home-slide-hover-card bg-app-home-slide-hover-card-bg z-[6] ${position === 10 || position === 6 ? "ml-[-375px]" : "ml-[-205px]"}`}
     >
-      <Image alt="rank-image" src="/images/modal-img.webp" width={0} height={0} sizes="100vh" className="w-full rounded-t-md" />
+      <Image alt="rank-image" src="/images/modal-img.webp" width={0} height={0} sizes="100vh" className="w-full rounded-t-md" unoptimized />
       <div className="p-4">
         <div className="flex justify-between items-center mb-5">
           <div className="flex items-center gap-x-2">

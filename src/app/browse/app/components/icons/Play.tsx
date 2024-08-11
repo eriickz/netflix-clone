@@ -4,8 +4,8 @@ const Play: FC<{ className?: string }> = ({ className }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="100%"
-      height="100%"
+      width="24"
+      height="24"
       fill="none"
       aria-hidden="true"
       viewBox="0 0 24 24"

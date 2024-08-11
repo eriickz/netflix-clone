@@ -39,7 +39,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${netflixSans400.variable} ${netflixSans500.variable} ${netflixSans900.variable} overflow-x-hidden`}>{children}</body>
+      <body className={`${netflixSans400.variable} ${netflixSans500.variable} ${netflixSans900.variable} bg-choose-profile-background overflow-x-hidden`}>{children}</body>
     </html>
   );
 }

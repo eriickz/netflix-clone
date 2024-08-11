@@ -105,14 +105,11 @@ export default function Home() {
           <div className="flex items-center justify-center h-full text-home-input-label p-8">
             <div className="w-full md:w-3/5 font-NetflixSansRegular text-sm">
               <p className="text-base mb-4">
-                Questions? Call <a href="tel: 1 (408) 600-1718  (USA)" className="underline decoration-solid">1 (408)
-                600-1718 (USA)</a>
+                Questions? Call <a href="https://wa.me/+18299026178" className="underline decoration-solid">+1 (829) 902-6178</a>
               </p>
               <ul className="flex flex-col flex-wrap w-full mb-6 gap-y-4 max-h-72 md:max-h-36">
                 <li className="underline decoration-solid">
-                  <a href="https://help.netflix.com/support/412" target="_blank">
-                    FAQ
-                  </a>
+                  <a>FAQ</a>
                 </li>
                 <li className="underline decoration-solid">
                   <a>Investor Relations</a>

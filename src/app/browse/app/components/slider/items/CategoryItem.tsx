@@ -14,6 +14,7 @@ const CategoryItem: FC<{ position: number }> = ({ position }) => {
           height={0} 
           sizes="100vh" 
           className="w-full h-full inline-block rounded" 
+          unoptimized
         />
       </HoverCardTrigger>
       <SliderItemContent position={position} />

@@ -15,9 +15,9 @@ const Header = () => {
   }, [])
 
   return (
-    <header className={`w-full fixed flex justify-between items-center px-3.9r z-[4] pt-1 min-h-[41px] md:pt-0 md:min-h-[70px] transition-backgroundColor duration-0.4 ease-in bg-app-header-gradient ${!isOnPageTop && "bg-app-home-header-scrolled-bg"}`}>
+    <header className={`w-full fixed flex justify-between items-center px-3.9r z-[4] pt-1 1.5lg:px-14.5 min-h-[41px] md:pt-0 md:min-h-[70px] transition-backgroundColor duration-0.4 ease-in bg-app-header-gradient ${!isOnPageTop && "bg-app-home-header-scrolled-bg"}`}>
       <div className="flex items-center">
-        <Logo className="xs:w-[60px] md:w-[5.34vw] h-full mr-[2.5vw]" />
+        <Logo className="h-full mr-[2.5vw] xs:w-[60px] md:w-[5.34vw] 1.5lg:max-w-[92px] 1.5lg:max-h-[25px] 1.5lg:mr-[38px]" />
         <ul className="flex items-center gap-x-[1.2rem] text-app-header-nav-item-color font-NetflixSansRegular text-xs md:text-sm [&>li:not(:first-child)]:hidden [&>li:not(:first-child)]:md:list-item [&>li]:cursor-pointer hover:[&>li:not(:first-child)]:text-app-header-nav-item-hover-color">
           <li className="text-white font-NetflixSansSemiBold">
             Home

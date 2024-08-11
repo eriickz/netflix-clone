@@ -33,7 +33,8 @@ const RankingItem: FC<{ position: number }> = ({ position }) => {
           width={0} 
           height={0} 
           sizes="100vh" 
-          className="w-1/2 h-full inline-block relative left-[-1px] rounded-sm" 
+          className="w-1/2 h-full inline-block relative left-[-5px] rounded-sm" 
+          unoptimized
         />
       </HoverCardTrigger>
       <SliderItemContent position={position} />
