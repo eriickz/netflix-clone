@@ -1,20 +1,26 @@
 "use client"
 
-import ChooseProfile from "./profile/ChooseProfile";
-import { useState } from "react";
-import { Profile } from "./profile/libs/interfaces";
-import App from "./app/App";
+import ChooseProfile from "./pages/profile/ChooseProfile";
+import Home from "./pages/home/Home";
+import ProfileLoading from "./pages/profile/ProfileLoading";
+import useNavigateToHome from "./hooks/useNavigateToHome";
 
 const Browse = () => {
-  const [profile, setProfile] = useState<Profile | undefined>(undefined)
-  
+  const { profile, setProfile, showProfileLoading } = useNavigateToHome() 
+
   return (
     <>
-      {
-        !profile
-          ? <ChooseProfile setProfileState={setProfile} />
-          : <App/>
-      }
+      {!profile && (
+        <ChooseProfile setProfileState={setProfile} />
+      )}
+
+      {(showProfileLoading && profile) && (
+        <ProfileLoading avatar={profile.avatar} />
+      )}
+      
+      {(!showProfileLoading && profile) && (
+        <Home />
+      )}
     </>
   )
 }

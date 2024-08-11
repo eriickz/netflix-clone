@@ -122,10 +122,15 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "profile-enter": {
+          from: { opacity: "0", transform: "scale(1.1)" },
+          to: { opacity: "1", transform: "scale(1)" },
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.25s ease-out",
         "accordion-up": "accordion-up 0.25s ease-out",
+        "profile-in": "profile-enter .45s forwards"
       },
       transitionProperty: {
         "rotate": "rotate",
