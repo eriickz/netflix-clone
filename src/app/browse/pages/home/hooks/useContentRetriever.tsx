@@ -12,7 +12,8 @@ const useContentRetriever = () => {
   }, [])
 
   return {
-    collections
+    movies: collections?.videos.find(vid => vid.type === "movies"),
+    shows: collections?.videos.find(vid => vid.type === "shows"),
   }
 }
 

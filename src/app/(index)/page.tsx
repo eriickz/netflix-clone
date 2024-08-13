@@ -24,6 +24,7 @@ export default function Home() {
           placeholder="blur"
           sizes="100vw"
           className="z-[-1] scale-125 translate-y-[-12.2%] object-cover"
+          unoptimized
         />
         <div className="w-full md:w-[66.6%] mx-auto">
           <header className="flex justify-between flex-wrap items-center px-12 py-6 gap-y-2">

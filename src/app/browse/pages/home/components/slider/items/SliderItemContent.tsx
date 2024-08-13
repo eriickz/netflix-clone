@@ -5,15 +5,24 @@ import PlusBold from "../../icons/PlusBold";
 import ThumbsUp from "../../icons/ThumbsUp";
 import CaretDownBold from "../../icons/CaretDownBold";
 import { FC } from "react";
+import { MovieShow } from "../../../libs/types";
+import { TMBD_IMG_BASE_URL } from "../../../libs/constants";
 
-const SliderItemContent: FC<{ position: number }> = ({ position }) => {
+const SliderItemContent: FC<{ content: MovieShow }> = ({ content }) => {
   return (
     <HoverCardContent 
-      side="top" 
+      side="left" 
       avoidCollisions 
-      className={`absolute rounded-md border-none w-[580px] mt-[-100px] p-0 shadow-app-home-slide-hover-card bg-app-home-slide-hover-card-bg z-[6] ${position === 10 || position === 6 ? "ml-[-375px]" : "ml-[-205px]"}`}
+      className={`absolute rounded-md border-none min-w-[580px] mt-[-100px] p-0 shadow-app-home-slide-hover-card bg-app-home-slide-hover-card-bg z-[6]`}
     >
-      <Image alt="rank-image" src="/images/modal-img.webp" width={0} height={0} sizes="100vh" className="w-full rounded-t-md" unoptimized />
+      <Image alt="rank-image" 
+        src={`${TMBD_IMG_BASE_URL}/w1280/${content.backdrop_path}`}
+        width={0}
+        height={0}
+        sizes="100vh"
+        objectFit="cover"
+        className="w-full max-h-[326px] rounded-t-md" 
+      />
       <div className="p-4">
         <div className="flex justify-between items-center mb-5">
           <div className="flex items-center gap-x-2">

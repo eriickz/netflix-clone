@@ -1,15 +1,5 @@
 import type { Genre, MovieShow, SliderType } from "./types"
 
-export interface SliderItemProps {
-  position: number
-  type: SliderType 
-}
-
-export interface SliderProps {
-  showVignette: boolean
-  type: SliderType
-}
-
 export interface MovieShowRequest {
   page: number,
   results: MovieShow[]
@@ -33,4 +23,23 @@ export interface GenresCollections {
 export interface VideosAndGenresRequest {
   videos: MoviesShowsCollections[]
   genres: GenresCollections[]
+}
+
+// ---> PROPS
+
+export interface SliderItemProps {
+  position: number
+  type: SliderType 
+  content: MovieShow
+}
+
+export interface SliderProps {
+  showVignette?: boolean
+  sliderType: SliderType
+  data?: MovieShow[]
+}
+
+export interface SliderTypeItemProps {
+  position?: number
+  content: MovieShow
 }

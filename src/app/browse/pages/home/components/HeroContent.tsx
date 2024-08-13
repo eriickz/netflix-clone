@@ -8,13 +8,13 @@ const HeroContent = () => {
   return (
     <div className="w-full z-3 pl-3.9r 1.5lg:pl-14.5 flex flex-col justify-end">
       <div className="w-[36%]">
-        <Image alt="non negotiable" src="/images/non-negotiable.webp" width={0} height={0} sizes="100vw" objectFit="cover" className="w-full z-3" unoptimized />
+        <Image alt="non negotiable" src="/images/ambulance.webp" width={0} height={0} sizes="100vw" objectFit="cover" className="w-full z-3" unoptimized />
         <div className="text-white">
           <div className="flex items-center my-[1vw]"> 
             <Top10 className="w-auto h-[2.4vw] mr-3"/>
-            <p className="text-1.5r font-NetflixSansSemiBold text-shadow-app-home-movie">#3 in Movies Today</p>
+            <p className="text-1.5r font-NetflixSansSemiBold text-shadow-app-home-movie">#2 in Movies Today</p>
           </div>
-          <p className="text-1.2r leading-[normal] font-NetflixSansRegular text-shadow-app-home-movie">Hostage negotiator Alan Bender is called to rescue the president from a kidnapping, only to find himself also mediating to save his wife and marriage.</p>
+          <p className="text-1.2r leading-[normal] font-NetflixSansRegular text-shadow-app-home-movie">The adrenaline levels are sky-high in this action movie about two brothers on the run, which Vulture calls "a deliciously profane, bonkers thrill."</p>
         </div>
       </div>
       <div className="z-3 w-full flex justify-between items-center">

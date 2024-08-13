@@ -4,8 +4,9 @@ import Logo from "@/components/Logo";
 import MagnifyingGlass from "./icons/MagnifyingGlass";
 import Bell from "./icons/Bell";
 import { useEffect, useState } from "react";
+import { FC } from "react";
 
-const Header = () => {
+const Header: FC<{ avatar: string }> = ({ avatar }) => {
   const [isOnPageTop, setIsOnPageTop] = useState(true)
 
   useEffect(() => {
@@ -48,7 +49,7 @@ const Header = () => {
           <Bell/>
         </button>
         <div className="flex items-center cursor-pointer">
-          <div className="bg-avatar bg-no-repeat bg-cover w-8 h-8 rounded-sm"></div>
+          <div className={`${avatar} bg-no-repeat bg-cover w-8 h-8 rounded-sm`}></div>
           <span className="w-0 h-0 border-t-5 border-l-5 border-r-5 border-t-white border-l-transparent border-r-transparent ml-2.5 hidden md:block"></span>
         </div>
       </div>

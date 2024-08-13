@@ -19,7 +19,7 @@ const Browse = () => {
       )}
       
       {(!showProfileLoading && profile) && (
-        <Home />
+        <Home avatar={profile.avatar} />
       )}
     </>
   )
