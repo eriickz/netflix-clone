@@ -2,45 +2,72 @@
 
 import SliderItem from "./SliderItem"
 import CaretDownBold from "../icons/CaretDownBold" 
-import { FC, useState } from "react"
+import { FC, useState, useEffect } from "react"
 import SliderPagination from "./SliderPagination"
 import { SliderProps } from "../../libs/interfaces"
+import { InView } from "react-intersection-observer"
 
 const Slider: FC<SliderProps> = ({ sliderType, showVignette = false, data }) => {
   const [showLeftHandler, setShowLeftHandler] = useState(false)
+  const [showRightHandler, setShowRightHandler] = useState(true)
+  const [translateX, setTranslateX] = useState(0)
 
-  const onSliderChange = (isLeftBtn: boolean = false) => {
-    if (isLeftBtn) {
-      setShowLeftHandler(false)
-      return
-    }
+  useEffect(() => {
+    setShowLeftHandler(translateX < 0) 
+  }, [translateX])
 
-    setShowLeftHandler(true)
+  const onNextBtnClick = () => {
+    setTranslateX(translateX + 100 * -1)
+  }
+
+  const onPrevBtnClick = () => {
+    setTranslateX(translateX + 100)
   }
 
   return (
-    <div className={`w-full px-3.9r 1.5lg:px-14.5 ${showVignette && "bg-app-home-ranking-vignette-gradient"} ${showLeftHandler ? "overflow-x-clip" : "overflow-x-hidden"}`}>
-      {showLeftHandler && (
-        <button 
-          className="absolute flex justify-center items-center z-1 w-[3.8vw] 1.5lg:w-[60px] h-[-webkit-fill-available] h-[-moz-fill-available] left-0 bg-app-home-slide-handler-bg text-transparent rounded-tr hover:text-white hover:bg-app-home-slide-handler-hover-bg"
-          onClick={() => onSliderChange(true)}
-        >
-          <CaretDownBold className="w-[50px] h-[50px] rotate-90 transition-all duration-75 ease-in" />
-        </button>
-      )}
-      <button 
-        className="absolute flex justify-center items-center z-1 w-[3.6vw] 1.5lg:w-[60px] h-[-webkit-fill-available] h-[-moz-fill-available] right-0 bg-app-home-slide-handler-bg text-transparent rounded-tl hover:text-white hover:bg-app-home-slide-handler-hover-bg"
-        onClick={() => onSliderChange(false)}
-      >
-        <CaretDownBold className="w-[50px] h-[50px] rotate-[-90deg] transition-all duration-75 ease-in" />
-      </button>
+    <>
       <SliderPagination />
-      <div className={`inline-block whitespace-nowrap overflow-x-visible touch-pan-y [&>a_svg]:w-1/2 [&>a_svg]:inline-block transition-slider duration-0.54 slider-ease delay-0 ${showLeftHandler ? "translate-x-[-66.5%]" : ""}`}>
-        {data?.map((item, index) => (
-          <SliderItem position={index + 1} type={sliderType} content={item} />
-        ))}
+      <div className={`w-full relative px-3.9r 1.5lg:px-14.5 ${showVignette && "bg-app-home-ranking-vignette-gradient"} ${showLeftHandler ? "overflow-x-clip" : "overflow-x-hidden"}`}>
+        {showLeftHandler && (
+          <button 
+            className="absolute hidden sm:flex justify-center items-center z-1 w-[3.8vw] 1.5lg:w-[60px] h-full left-0 bg-app-home-slide-handler-bg text-transparent rounded-tr hover:text-white hover:bg-app-home-slide-handler-hover-bg"
+            onClick={onPrevBtnClick}
+          >
+            <CaretDownBold className="w-[50px] h-[50px] rotate-90 transition-all duration-75 ease-in" />
+          </button>
+        )}
+        {showRightHandler && (
+          <button 
+            className="absolute hidden sm:flex justify-center items-center z-1 w-[3.6vw] 1.5lg:w-[60px] h-full right-0 bg-app-home-slide-handler-bg text-transparent rounded-tl hover:text-white hover:bg-app-home-slide-handler-hover-bg"
+            onClick={onNextBtnClick}
+          >
+            <CaretDownBold className="w-[50px] h-[50px] rotate-[-90deg] transition-all duration-75 ease-in" />
+          </button>
+        )}
+        <div 
+          className="inline-block relative whitespace-nowrap overflow-x-visible touch-pan-y [&>a_svg]:w-1/2 [&>a_svg]:inline-block transition-slider duration-0.54 slider-ease delay-0 overflow-y-visible"
+          style={{ transform: `translateX(${translateX + "%"})` }}
+        >
+          {data?.map((item, index) => (
+            <>
+              {index !== 9
+                ? <SliderItem position={index + 1} type={sliderType} content={item} />
+                : (
+                  <InView 
+                    as="div" 
+                    onChange={(inView => setShowRightHandler(inView === false))} 
+                    className="inline-block w-full h-full [&>a_svg]:w-1/2 [&>a_svg]:inline-block"
+                    threshold={1}
+                  >
+                   <SliderItem position={index + 1} type={sliderType} content={item} /> 
+                  </InView>
+                )
+              }
+            </>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 

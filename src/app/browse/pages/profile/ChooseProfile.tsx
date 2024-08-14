@@ -1,5 +1,3 @@
-"use client"
-
 import { FC } from "react";
 import Profile from "./components/Profile";
 import { ChooseProfileProps } from "./libs/interfaces";

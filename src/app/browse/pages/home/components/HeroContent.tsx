@@ -3,18 +3,20 @@ import Play from "./icons/Play";
 import Info from "./icons/Info";
 import Refresh from "./icons/Refresh";
 import Image from "next/image";
+import { FC } from "react";
+import { TMBD_IMG_BASE_URL } from "../libs/constants";
 
-const HeroContent = () => {
+const HeroContent: FC<{ logo?: string, overview?: string }> = ({ logo, overview }) => {
   return (
     <div className="w-full z-3 pl-3.9r 1.5lg:pl-14.5 flex flex-col justify-end">
       <div className="w-[36%]">
-        <Image alt="non negotiable" src="/images/ambulance.webp" width={0} height={0} sizes="100vw" objectFit="cover" className="w-full z-3" unoptimized />
+        <Image alt="non negotiable" src={`${TMBD_IMG_BASE_URL}/original/${logo}`} width={0} height={0} sizes="100vw" objectFit="cover" className="w-full z-3" unoptimized />
         <div className="text-white">
           <div className="flex items-center my-[1vw]"> 
             <Top10 className="w-auto h-[2.4vw] mr-3"/>
-            <p className="text-1.5r font-NetflixSansSemiBold text-shadow-app-home-movie">#2 in Movies Today</p>
+            <p className="text-1.5r font-NetflixSansSemiBold text-shadow-app-home-movie">#1 in Movies Today</p>
           </div>
-          <p className="text-1.2r leading-[normal] font-NetflixSansRegular text-shadow-app-home-movie">The adrenaline levels are sky-high in this action movie about two brothers on the run, which Vulture calls "a deliciously profane, bonkers thrill."</p>
+          <p className="text-1.2r leading-[normal] font-NetflixSansRegular text-shadow-app-home-movie">{overview}</p>
         </div>
       </div>
       <div className="z-3 w-full flex justify-between items-center">

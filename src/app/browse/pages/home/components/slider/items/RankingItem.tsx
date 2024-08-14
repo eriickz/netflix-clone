@@ -40,7 +40,7 @@ const RankingItem: FC<SliderTypeItemProps> = ({ position, content }) => {
           unoptimized
         />
       </HoverCardTrigger>
-      <SliderItemContent />
+      <SliderItemContent position={position} content={content} />
     </HoverCard>
   )
 }

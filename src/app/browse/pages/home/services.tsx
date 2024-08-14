@@ -1,5 +1,5 @@
 import ky from "ky";
-import { GenresCollections, MovieShowRequest, MoviesGenresRequest, MoviesShowsCollections, VideosAndGenresRequest } from "./libs/interfaces";
+import { GenresCollections, MovieImagesRequest, MovieShowRequest, MovieVideosAndImagesRequest, MovieVideosRequest, MoviesGenresRequest, MoviesShowsCollections, VideosAndGenresRequest } from "./libs/interfaces";
 
 const api = ky.create({
   prefixUrl: process.env.NEXT_PUBLIC_API_URL,
@@ -8,19 +8,19 @@ const api = ky.create({
   }
 })
 
-export async function getMovies(): Promise<MovieShowRequest> {
+async function getMovies(): Promise<MovieShowRequest> {
   return await api.get("discover/movie?include_video=true").json()
 }
 
-export async function getTvShows(): Promise<MovieShowRequest> {
+async function getTvShows(): Promise<MovieShowRequest> {
   return await api.get("discover/tv").json()
 }
 
-export async function getMoviesGenres(): Promise<MoviesGenresRequest> {
+async function getMoviesGenres(): Promise<MoviesGenresRequest> {
   return await api.get("genre/movie/list").json()
 }
 
-export async function getShowGenres(): Promise<MoviesGenresRequest> {
+async function getShowGenres(): Promise<MoviesGenresRequest> {
   return await api.get("genre/tv/list").json()
 }
 
@@ -49,6 +49,23 @@ export async function getVideosAndGenres(): Promise<VideosAndGenresRequest> {
     return {
       videos,
       genres
+    }
+  })
+}
+
+async function getMovieVideos(movieId: number): Promise<MovieVideosRequest> {
+  return await api.get(`movie/${movieId}/videos`).json()
+}
+
+async function getMovieImages(movieId: number): Promise<MovieImagesRequest> {
+  return await api.get(`movie/${movieId}/images?language=en`).json()
+}
+
+export async function getMovieImagesAndVideos(movieId: number): Promise<MovieVideosAndImagesRequest> {
+  return await Promise.all([getMovieVideos(movieId), getMovieImages(movieId)]).then(responses => {
+    return {
+      videos: responses[0],
+      images: responses[1]
     }
   })
 }

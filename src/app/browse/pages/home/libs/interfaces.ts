@@ -1,8 +1,20 @@
-import type { Genre, MovieShow, SliderType } from "./types"
+import type { Genre, MovieShow, SliderType, MovieVideo, MovieImage } from "./types"
 
 export interface MovieShowRequest {
   page: number,
   results: MovieShow[]
+}
+
+export interface MovieVideosRequest {
+  page: number
+  results: MovieVideo[]
+}
+
+export interface MovieImagesRequest {
+  id: number
+  backdrops: MovieImage[]
+  logos: MovieImage[]
+  posters: MovieImage[]
 }
 
 export interface MoviesGenresRequest {
@@ -10,8 +22,8 @@ export interface MoviesGenresRequest {
 }
 
 export interface MoviesShowsCollections {
-  type: "movies" | "shows",
-  topRated: MovieShow[],
+  type: "movies" | "shows"
+  topRated: MovieShow[]
   nextWatch: MovieShow[]
 }
 
@@ -23,6 +35,11 @@ export interface GenresCollections {
 export interface VideosAndGenresRequest {
   videos: MoviesShowsCollections[]
   genres: GenresCollections[]
+}
+
+export interface MovieVideosAndImagesRequest {
+  images: MovieImagesRequest,
+  videos: MovieVideosRequest
 }
 
 // ---> PROPS
@@ -40,6 +57,6 @@ export interface SliderProps {
 }
 
 export interface SliderTypeItemProps {
-  position?: number
+  position: number
   content: MovieShow
 }
