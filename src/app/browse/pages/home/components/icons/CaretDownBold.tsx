@@ -7,7 +7,7 @@ const CaretDownBold: FC<{ className?: string }> = ({ className }) => {
       width="24"
       height="24"
       fill="none"
-      aria-Hidden="true"
+      aria-hidden="true"
       viewBox="0 0 24 24"
       className={className}
     >
