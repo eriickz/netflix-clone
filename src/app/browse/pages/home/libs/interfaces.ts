@@ -1,13 +1,8 @@
-import type { Genre, MovieShow, SliderType, MovieVideo, MovieImage } from "./types"
+import type { Genre, MovieShow, SliderType, MovieImage } from "./types"
 
 export interface MovieShowRequest {
   page: number,
   results: MovieShow[]
-}
-
-export interface MovieVideosRequest {
-  page: number
-  results: MovieVideo[]
 }
 
 export interface MovieImagesRequest {
@@ -34,12 +29,7 @@ export interface GenresCollections {
 
 export interface VideosAndGenresRequest {
   videos: MoviesShowsCollections[]
-  genres: GenresCollections[]
-}
-
-export interface MovieVideosAndImagesRequest {
-  images: MovieImagesRequest,
-  videos: MovieVideosRequest
+  genres: GenresCollections
 }
 
 // ---> PROPS
@@ -48,15 +38,18 @@ export interface SliderItemProps {
   position: number
   type: SliderType 
   content: MovieShow
+  genres?: Genre[] 
 }
 
 export interface SliderProps {
   showVignette?: boolean
   sliderType: SliderType
   data?: MovieShow[]
+  genres?: Genre[] 
 }
 
 export interface SliderTypeItemProps {
   position: number
   content: MovieShow
+  genres?: Genre[] 
 }

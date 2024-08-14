@@ -5,7 +5,7 @@ import SliderItemContent from "./SliderItemContent"
 import { SliderTypeItemProps } from "../../../libs/interfaces"
 import { TMBD_IMG_BASE_URL } from "../../../libs/constants";
 
-const CategoryItem: FC<SliderTypeItemProps> = ({ position, content }) => {
+const CategoryItem: FC<SliderTypeItemProps> = ({ position, content, genres }) => {
   return (
     <HoverCard openDelay={500}>
       <HoverCardTrigger className="inline-block w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 1.5lg:w-1/6 h-full px-1">
@@ -20,7 +20,7 @@ const CategoryItem: FC<SliderTypeItemProps> = ({ position, content }) => {
           unoptimized
         />
       </HoverCardTrigger>
-      <SliderItemContent position={position} content={content} />
+      <SliderItemContent position={position} content={content} genres={genres} />
     </HoverCard>
   )
 }

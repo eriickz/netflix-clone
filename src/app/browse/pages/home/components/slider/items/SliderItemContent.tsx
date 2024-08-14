@@ -5,17 +5,17 @@ import PlusBold from "../../icons/PlusBold";
 import ThumbsUp from "../../icons/ThumbsUp";
 import CaretDownBold from "../../icons/CaretDownBold";
 import { FC } from "react";
-import { MovieShow } from "../../../libs/types";
 import { TMBD_IMG_BASE_URL } from "../../../libs/constants";
+import { SliderTypeItemProps } from "../../../libs/interfaces";
 
-const SliderItemContent: FC<{ position: number, content: MovieShow }> = ({ position, content }) => {
+const SliderItemContent: FC<SliderTypeItemProps> = ({ content, position, genres }) => {
   return (
     <HoverCardContent 
-      side="left"
-      avoidCollisions
-      className={`absolute rounded-md border-none min-w-[580px] p-0 shadow-app-home-slide-hover-card bg-app-home-slide-hover-card-bg z-[6]`}
+      side="top"
+      className={`absolute rounded-md border-none min-w-[580px] p-0 shadow-app-home-slide-hover-card bg-app-home-slide-hover-card-bg z-[6] top-[-100px] left-[-130px] ${position === 6 && "lg:ml-[-300px]"}`}
     >
-      <Image alt="rank-image" 
+      <Image 
+        alt="rank-image" 
         src={`${TMBD_IMG_BASE_URL}/w1280/${content.backdrop_path}`}
         width={0}
         height={0}
@@ -51,17 +51,20 @@ const SliderItemContent: FC<{ position: number, content: MovieShow }> = ({ posit
           </div>
         </div>
         <ul className="flex text-white font-NetflixSansRegular mb-1 text-base">
-          <li className="text-shadow-app-home-slide-hover-card-tags inline-flex items-center flex-wrap">
-            Violent 
-            <div className="before:content-['\2022'] before:inline-block before:px-3 before:text-3xl before:text-app-home-slide-hover-card-tags-separator-bg before:align-sub"></div>
-          </li>
-          <li className="text-shadow-app-home-slide-hover-card-tags inline-flex items-center flex-wrap">
-            Suspenseful 
-            <div className="before:content-['\2022'] before:inline-block before:px-3 before:text-3xl before:text-app-home-slide-hover-card-tags-separator-bg before:align-sub"></div>
-          </li>
-          <li className="text-shadow-app-home-slide-hover-card-tags inline-flex items-center flex-wrap">
-            Horror 
-          </li>
+          {genres !== undefined && content.genre_ids?.map((genreId, index) => {
+            const genreFound = genres?.find(({ id }) => id === genreId)
+
+            if (genreFound) {
+              return (
+                <li className="text-shadow-app-home-slide-hover-card-tags inline-flex items-center flex-wrap" key={index}>
+                  {genreFound.name} 
+                  {(index !== content.genre_ids.length - 1) && (
+                    <div className="before:content-['\2022'] before:inline-block before:px-3 before:text-3xl before:text-app-home-slide-hover-card-tags-separator-bg before:align-sub"></div>
+                  )}
+                </li> 
+              )
+            }
+          })}
         </ul>
       </div>
     </HoverCardContent>

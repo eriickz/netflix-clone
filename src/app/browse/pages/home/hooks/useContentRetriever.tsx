@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { VideosAndGenresRequest } from "../libs/interfaces"
-import { getMovieImagesAndVideos, getVideosAndGenres } from "../services"
+import { getMovieImages, getVideosAndGenres } from "../services"
 import { HeroContent } from "../libs/types"
 
 const useContentRetriever = () => {
@@ -18,9 +18,9 @@ const useContentRetriever = () => {
 
   useEffect(() => {
     if (movies !== undefined && heroContent === undefined) {
-      getMovieImagesAndVideos(movies.topRated[0].id).then(req => {
+      getMovieImages(movies.topRated[0].id).then(req => {
         setheroContent({
-          logo: req.images.logos[0].file_path,
+          logo: req.logos[0].file_path,
           overview: movies.topRated[0].overview,
           backdrop: movies.topRated[0].backdrop_path
         })
@@ -31,7 +31,8 @@ const useContentRetriever = () => {
   return {
     movies,
     shows,
-    heroContent 
+    heroContent,
+    genres: collections?.genres
   }
 }
 

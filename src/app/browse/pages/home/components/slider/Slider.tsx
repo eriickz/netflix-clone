@@ -7,7 +7,7 @@ import SliderPagination from "./SliderPagination"
 import { SliderProps } from "../../libs/interfaces"
 import { InView } from "react-intersection-observer"
 
-const Slider: FC<SliderProps> = ({ sliderType, showVignette = false, data }) => {
+const Slider: FC<SliderProps> = ({ sliderType, data, genres, showVignette = false }) => {
   const [showLeftHandler, setShowLeftHandler] = useState(false)
   const [showRightHandler, setShowRightHandler] = useState(true)
   const [translateX, setTranslateX] = useState(0)
@@ -46,12 +46,12 @@ const Slider: FC<SliderProps> = ({ sliderType, showVignette = false, data }) => 
         )}
         <div 
           className="inline-block relative whitespace-nowrap overflow-x-visible touch-pan-y [&>a_svg]:w-1/2 [&>a_svg]:inline-block transition-slider duration-0.54 slider-ease delay-0 overflow-y-visible"
-          style={{ transform: `translateX(${translateX + "%"})` }}
+          style={translateX !== 0 ? { transform: `translateX(${translateX + "%"})` } : undefined}
         >
           {data?.map((item, index) => (
             <>
               {index !== 9
-                ? <SliderItem position={index + 1} type={sliderType} content={item} />
+                ? <SliderItem position={index + 1} type={sliderType} content={item} genres={genres} />
                 : (
                   <InView 
                     as="div" 
@@ -59,7 +59,7 @@ const Slider: FC<SliderProps> = ({ sliderType, showVignette = false, data }) => 
                     className="inline-block w-full h-full [&>a_svg]:w-1/2 [&>a_svg]:inline-block"
                     threshold={1}
                   >
-                   <SliderItem position={index + 1} type={sliderType} content={item} /> 
+                   <SliderItem position={index + 1} type={sliderType} content={item} genres={genres} /> 
                   </InView>
                 )
               }

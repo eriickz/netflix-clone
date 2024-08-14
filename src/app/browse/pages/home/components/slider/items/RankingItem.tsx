@@ -15,10 +15,10 @@ import SliderItemContent from "./SliderItemContent";
 import { SliderTypeItemProps } from "../../../libs/interfaces";
 import { TMBD_IMG_BASE_URL } from "../../../libs/constants";
 
-const RankingItem: FC<SliderTypeItemProps> = ({ position, content }) => {
+const RankingItem: FC<SliderTypeItemProps> = ({ position, content, genres }) => {
   return (
     <HoverCard openDelay={500}>
-      <HoverCardTrigger className="inline-block w-1/2 h-[124px] sm:w-1/3 md:w-1/4 lg:w-1/5 1.5lg:w-1/6 sm:h-[196px] md:h-[194px] lg:h-[170px] 1.5lg:h-[184px] xxl:h-[260px] px-1">
+      <HoverCardTrigger  className="inline-block w-1/2 h-[124px] sm:w-1/3 md:w-1/4 lg:w-1/5 1.5lg:w-1/6 sm:h-[196px] md:h-[194px] lg:h-[170px] 1.5lg:h-[184px] xxl:h-[260px] px-1">
         {position === 1 && <Rank1 />}
         {position === 2 && <Rank2 />}
         {position === 3 && <Rank3 />}
@@ -40,7 +40,7 @@ const RankingItem: FC<SliderTypeItemProps> = ({ position, content }) => {
           unoptimized
         />
       </HoverCardTrigger>
-      <SliderItemContent position={position} content={content} />
+      <SliderItemContent position={position} content={content} genres={genres} />
     </HoverCard>
   )
 }
