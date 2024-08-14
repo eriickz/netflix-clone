@@ -42,5 +42,5 @@ styled-system-studio
 #JetBrains
 .idea
 
-#environment
-.env.local
+#CD
+/.github/
