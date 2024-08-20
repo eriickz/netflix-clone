@@ -27,7 +27,7 @@ RUN npm ci --include=dev
 COPY --link . .
 
 # Mounting Secrets
-RUN --mount=type=secret,api_token=NEXT_PUBLIC_API_TOKEN \
+RUN --mount=type=secret,NEXT_PUBLIC_API_TOKEN=NEXT_PUBLIC_API_TOKEN \
 NEXT_PUBLIC_API_TOKEN="$(cat /run/secrets/NEXT_PUBLIC_API_TOKEN)"
 
 # Build application
