@@ -26,12 +26,10 @@ RUN npm ci --include=dev
 # Copy application code
 COPY --link . .
 
-# Mounting Secrets
+# Mounting Secrets and buidling application
 RUN --mount=type=secret,id=NEXT_PUBLIC_API_TOKEN \
-NEXT_PUBLIC_API_TOKEN="$(cat /run/secrets/NEXT_PUBLIC_API_TOKEN)"
-
-# Build application
-RUN npm run build
+    NEXT_PUBLIC_API_TOKEN="$(cat /run/secrets/NEXT_PUBLIC_API_TOKEN)" \
+    npm run build
 
 # Remove development dependencies
 RUN npm prune --omit=dev
