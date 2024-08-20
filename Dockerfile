@@ -28,7 +28,7 @@ COPY --link . .
 
 # Mounting Secrets
 RUN --mount=type=secret,id=NEXT_PUBLIC_API_TOKEN \
-NEXT_PUBLIC_API_TOKEN="$(cat /run/secrets/TMBD_API_TOKEN)"
+NEXT_PUBLIC_API_TOKEN="$(cat /run/secrets/NEXT_PUBLIC_API_TOKEN)"
 
 # Build application
 RUN npm run build
