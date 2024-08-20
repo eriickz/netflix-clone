@@ -26,6 +26,10 @@ RUN npm ci --include=dev
 # Copy application code
 COPY --link . .
 
+# Mounting Secrets
+RUN --mount=type=secret,api_token=NEXT_PUBLIC_API_TOKEN \
+NEXT_PUBLIC_API_TOKEN="$(cat /run/secrets/NEXT_PUBLIC_API_TOKEN)"
+
 # Build application
 RUN npm run build
 

@@ -2,7 +2,7 @@ import ky from "ky";
 import { MovieImagesRequest, MovieShowRequest, MoviesGenresRequest, MoviesShowsCollections, VideosAndGenresRequest } from "./libs/interfaces";
 
 const api = ky.create({
-  prefixUrl: process.env.NEXT_PUBLIC_API_URL,
+  prefixUrl: "https://api.themoviedb.org/3",
   headers: {
     Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`
   }
