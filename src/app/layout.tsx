@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { ReactNode } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 const netflixSans400 = localFont({
   src: "../assets/fonts/NetflixSans_400.woff2",
@@ -40,7 +41,10 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
   return (
     <html lang="en">
       <meta name="google-site-verification" content="pqJAamb2qQhQWW7JHh4r0Pi_RgIYy7YSiNFkRXU8f5g" />
-      <body className={`${netflixSans400.variable} ${netflixSans500.variable} ${netflixSans900.variable} bg-choose-profile-background overflow-x-hidden`}>{children}</body>
+      <body className={`${netflixSans400.variable} ${netflixSans500.variable} ${netflixSans900.variable} bg-choose-profile-background overflow-x-hidden`}>
+        <Analytics />
+        {children}
+      </body>
     </html>
   );
 }
